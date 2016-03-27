@@ -1,0 +1,219 @@
+﻿
+
+@import "mixin.less";
+
+
+body {
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	/*line-height: 30px;*/
+	color: #000000;
+	background-color: #ffffff;
+}
+
+
+.divCellInRow(){
+    width:140px;
+    display:inline-block;
+    padding:10px 0 0 70px;
+    cursor:default;
+}
+
+.divGroupText(){
+    font-size: 18px;
+	background: #fff;
+    color:#696969;
+    height:50px;
+    margin:30px 0 0 0;
+}
+
+.divItemText(){
+    font-size: 16px;
+    color:#696969;
+    height:30px;
+    margin:10px 0 0 50px;
+}
+
+.divGroupsRow(){
+    border-bottom:solid 1px;
+    border-bottom-color:#F1F1F1;
+    position:relative;
+}
+
+.divItemsRow(){
+    border-bottom:solid 1px;
+    border-top:solid 1px;
+    border-color:#EDEDED;
+    position:relative;
+    .gradient();
+}
+
+.divExpandImg(){
+    display:inline-block;
+    margin: 0 0 0 30px;
+    width:14px;
+    height:14px;
+    background: url('../images/Expand.png') left center no-repeat;
+}
+
+
+.divCollapseImg(){
+    display:inline-block;
+    margin: 0 0 0 30px;
+    width:14px;
+    height:14px;
+    background: url('../images/Collapse.png') left center no-repeat;
+}
+
+.divExpandDisableImg(){
+    display:inline-block;
+    margin: 0 0 0 30px;
+    width:14px;
+    height:14px;
+    background: url('../images/Expand-Disable.png') left center no-repeat;
+}
+
+.divDeleteImg(){
+    position:absolute;
+    right:-10px;
+    top:-10px;
+    display:inline-block;
+    background: url('../images/X.png') right top no-repeat;
+    width:20px;
+    height:20px;
+    cursor:pointer;
+}
+
+
+.divDragImg(){
+    position:absolute;
+    right:10px;
+    bottom:13px;
+    display:inline-block;
+    background: url('../images/DragHandle.png') right center no-repeat;
+    width:18px;
+    height:27px;
+    cursor:pointer;
+}
+
+.divAddImg(){
+    position: relative;
+    left: 280px;
+    bottom: 25px;
+    display:inline-block;
+    background: url('../images/Add.png') bottom center no-repeat;
+    width:45px;
+    height:45px;
+    cursor:pointer;
+}
+
+
+.main-div{
+	width: 620px;
+    height: 450px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    border-bottom:solid 4px;
+    border-bottom-color:#DF4E30;
+    .sub-main-div{
+	    width: 603px;
+        height: 420px;
+        
+    }
+    .main-div-header{
+        font-size: 22px;
+	    background: #DF4E30;
+        color:#fff;
+        height:45px;
+        .header-name{
+            .divCellInRow();
+            padding:0 0 0 110px;
+        }
+        .header-description{
+            .divCellInRow();
+        }
+    }
+    .groups-div-row{
+        .divGroupsRow();
+        .icon-placeholder{
+            
+        }
+        .divExpandImg{
+            .divExpandImg();
+        }
+        .divCollapseImg{
+            .divCollapseImg();
+        }
+        .divExpandDisableImg{
+            .divExpandDisableImg();
+        }
+        .group-row-name{
+            .divGroupText();
+            .divCellInRow();
+        }
+        .group-row-description{
+            .divGroupText();
+            .divCellInRow();
+        }
+        .items-div-sortable{
+            display:none;
+            .item-row-name{
+                .divItemText();
+                .divCellInRow();
+            }
+            .item-row-description{
+                .divItemText();
+                .divCellInRow();
+                margin:0;
+            }
+        }
+
+    }
+    .groups-div-row:hover{
+        border-bottom:none;
+        border: solid 2px #F1F1F1;
+        .icon-delete{
+            .divDeleteImg();
+        }
+        .icon-delete-hidden{
+            display:none;
+        }
+    }
+    .groups-div-row-regular:hover{
+        border:none;
+    }
+
+    .item-gradiant{
+        .divItemsRow();
+        .icon-drag{
+            .divDragImg();
+        }
+    }
+
+
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #A0A4A7; 
+}
+
+
+.icon-add{
+    .divAddImg();
+}
+
+
+
+
+
+

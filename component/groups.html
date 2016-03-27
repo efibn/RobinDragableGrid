@@ -1,0 +1,31 @@
+<section>
+    <div>
+        
+        <div class="main-div">
+            <div class="sub-main-div">
+                <div class="main-div-header">
+                    <div class="header-name">Name</div>
+                    <div class="header-description">Description</div>
+                </div>
+                <div ng-model="groups" ui-sortable="sortableOptionsGroups" ng-repeat="group in groups" class="groups-div-row">
+                    <div ng-click="toggleItems($index)" class="group-div-sortable" >
+                        <div class="icon-placeholder" ng-class="{true: 'divExpandImg', false: 'divExpandDisableImg'}[group.items.length > 0]"></div>
+                        <div class="group-row-name">{{group.name}}<span ng-show="group.items.length>0">({{group.items.length}})<span></span></div>
+                        <div class="group-row-description">{{group.description}}</div>
+                        <div class="icon-delete" ng-click="deleteGroup($index)"></div>
+                    </div>
+                    <div ng-model="group.items" ui-sortable="sortableOptionsItems" class="items-div-sortable">
+                        <div ng-repeat="item in group.items" class="item-container item-gradiant">
+                            <div class="item-row-name">{{item.name}}</div>
+                            <div class="item-row-description">{{item.description}}</div>
+                            <div class="icon-drag"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="icon-add"></div>
+
+
+    </div>
+</section>
